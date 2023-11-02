@@ -9,7 +9,7 @@ import { RiLoginBoxFill } from "react-icons/ri";
 
 export default function Header() {
   return (
-    <div className="p-4 px-6 w-screen h-20 flex fixed backdrop-blur-md">
+    <div className="p-4 px-6 w-screen h-36 flex fixed backdrop-blur-md">
       <div className="flex flex-row items-center h-full w-full justify-around">
         <Link href="/#hero">
           <Image
@@ -34,7 +34,7 @@ export default function Header() {
 
           <div className="mx-3">
             <Link
-              href="/developing"
+              href="/#contact"
               className="flex flex-row items-center hover:text-accent"
             >
               <HiPhone className="mx-3 text-2xl" />
