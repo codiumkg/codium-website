@@ -5,9 +5,20 @@ import Logo from "@/assets/codium_logo_solo.png";
 import { AiOutlineClose } from "react-icons/ai";
 import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
+import { IRegRequest } from "@/interfaces/regRequest";
+import { requestRegistration } from "@/requests/reqRequest";
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [requestData, setRequestData] = useState<IRegRequest>({
+    name: "",
+    phone: "",
+    age: null,
+  });
+
+  const handleSubmit = () => {
+    requestRegistration(requestData);
+  };
 
   return (
     <section
@@ -60,6 +71,9 @@ export default function HeroSection() {
                       className="rounded-xl bg-primary h-10 outline-none p-4 w-full"
                       placeholder="Ф.И.О *"
                       name="name"
+                      onChange={(e) =>
+                        setRequestData({ ...requestData, name: e.target.value })
+                      }
                       required
                     ></input>
                   </div>
@@ -68,6 +82,10 @@ export default function HeroSection() {
                       className="rounded-xl bg-primary h-10 outline-none p-4 w-full"
                       placeholder="Возраст *"
                       name="age"
+                      type="number"
+                      onChange={(e) =>
+                        setRequestData({ ...requestData, age: +e.target.value })
+                      }
                       required
                     ></input>
                   </div>
@@ -76,12 +94,21 @@ export default function HeroSection() {
                       className="rounded-xl bg-primary h-10 outline-none p-4 w-full"
                       placeholder="Номер телефона *"
                       name="phone"
+                      onChange={(e) =>
+                        setRequestData({
+                          ...requestData,
+                          phone: e.target.value,
+                        })
+                      }
                       required
                     ></input>
                   </div>
                 </div>
 
-                <button className="mt-6 px-8 py-3 bg-accent rounded-xl text-primary w-full">
+                <button
+                  className="mt-6 px-8 py-3 bg-accent rounded-xl text-primary w-full"
+                  onClick={handleSubmit}
+                >
                   Оставить заявку
                 </button>
               </Dialog.Content>
