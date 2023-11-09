@@ -7,17 +7,26 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
 import { IRegRequest } from "@/interfaces/regRequest";
 import { requestRegistration } from "@/requests/reqRequest";
+import LoadingSpinner from "./LoadingSpinner/LoadingSpinner";
 
 export default function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
   const [requestData, setRequestData] = useState<IRegRequest>({
     name: "",
     phone: "",
     age: null,
   });
 
+  const isDisabled =
+    !requestData.name || !requestData.age || !requestData.phone;
+
   const handleSubmit = () => {
-    requestRegistration(requestData);
+    setIsLoading(true);
+    requestRegistration(requestData)
+      .then(() => setIsModalOpen(false))
+      .finally(() => setIsLoading(false));
   };
 
   return (
@@ -110,10 +119,11 @@ export default function HeroSection() {
                 </div>
 
                 <button
-                  className="mt-6 px-8 py-3 bg-accent rounded-xl text-primary w-full"
+                  className="grid place-content-center mt-6 px-8 py-3 bg-accent rounded-xl text-primary w-full"
                   onClick={handleSubmit}
+                  disabled={isDisabled}
                 >
-                  Оставить заявку
+                  {isLoading ? <LoadingSpinner /> : "Оставить заявку"}
                 </button>
               </Dialog.Content>
             </Dialog.Portal>
