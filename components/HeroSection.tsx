@@ -22,38 +22,42 @@ export default function HeroSection() {
 
   return (
     <section
-      className="w-screen min-h-screen flex flex-col items-center"
+      className="py-20 lg:py-0 w-screen min-h-screen flex flex-col justify-center items-center"
       id="hero"
     >
-      <div className="flex flex-col lg:flex-row items-center justify-center h-screen">
-        <Image
-          src={Logo}
-          width={420}
-          height={420}
-          alt="Logo"
-          className="my-20 lg:my-0 mx-20 w-2/4"
-        />
+      <div className="flex flex-col lg:flex-row items-center justify-center">
+        <div className="flex-1">
+          <Image
+            src={Logo}
+            alt="Logo"
+            className="my-20 w-60 h-60 md:w-96 md:h-96 lg:my-0 lg:mx-20 shrink-0"
+          />
+        </div>
 
-        <div className="flex flex-col text-white text-5xl w-2/8 font-light">
+        <div className="flex flex-col flex-1 w-full text-white text-center lg:text-left text-3xl md:text-5xl items-center px-30 lg:px-0 lg:items-start font-light">
           <div>
-            <span className="text-4xl">Добро пожаловать в мир </span> <br />
-            <span className="text-accent-secondary font-extrabold">IT</span>
-            <span className="text-3xl"> где навыки становятся</span> <br />
-            <span className="text-accent font-bold text-6xl">
+            <span className="text-xl md:text-4xl">Добро пожаловать в мир </span>{" "}
+            <br />
+            <span className="text-3xl md:text-6xl text-accent-secondary font-extrabold">
+              IT
+            </span>
+            <span className="text-2xl md:text-3xl"> где навыки становятся</span>{" "}
+            <br />
+            <span className="text-3xl text-accent font-bold md:text-6xl">
               возможностями!
             </span>
           </div>
           <Dialog.Root open={isModalOpen} onOpenChange={setIsModalOpen}>
             <Dialog.Trigger asChild>
-              <button className="mt-12 px-8 py-4 border-2 lg:w-2/5 border-accent rounded-xl text-lg text-accent font-normal hover:bg-white hover:text-primary hover:border-white">
+              <button className="mt-12 px-8 py-4 border-2 border-accent rounded-xl text-lg text-accent font-normal hover:bg-white hover:text-primary hover:border-white">
                 Записаться
               </button>
             </Dialog.Trigger>
             <Dialog.Portal>
               <Dialog.Overlay className="absolute inset-0 bg-primary opacity-70 w-screen h-screen" />
-              <Dialog.Content className="p-6 w-1/4 min-h-min inset-y-2/4 inset-x-2/4 bg-secondary fixed rounded-xl -translate-x-2/4 -translate-y-2/4">
+              <Dialog.Content className="p-6 w-9/12 md:w-3/6 lg:w-1/4 bg-secondary min-h-min inset-y-2/4 inset-x-2/4 fixed rounded-xl -translate-x-2/4 -translate-y-2/4">
                 <div className="flex justify-between">
-                  <Dialog.Title className="text-3xl">
+                  <Dialog.Title className="text-2xl md:text-3xl">
                     Форма для заявки
                   </Dialog.Title>
 

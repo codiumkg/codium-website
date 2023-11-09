@@ -6,23 +6,25 @@ import Link from "next/link";
 import { HiAcademicCap } from "react-icons/hi";
 import { HiPhone } from "react-icons/hi";
 import { RiLoginBoxFill } from "react-icons/ri";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   return (
-    <div className="p-4 px-6 w-screen h-36 flex fixed backdrop-blur-md">
-      <div className="flex flex-row items-center h-full w-full justify-around">
+    <div className="md:p-4 md:px-6 w-screen h-36 flex fixed backdrop-blur-md">
+      <div className="flex flex-row items-center p-10 md:p-0 h-full w-full justify-between md:justify-around">
         <Link href="/#hero">
           <Image
             src={Logo}
             alt="logo"
-            width={260}
-            height={20}
-            className="mb-2"
+            objectFit="cover"
+            className="mb-2 w-44 md:w-80"
           />
         </Link>
 
-        <div className="flex flex-row items-center h-full uppercase">
-          <div className="mx-3">
+        <MobileMenu />
+
+        <div className="hidden md:flex flex-row items-center h-full uppercase">
+          <div>
             <Link
               href="/developing"
               className="flex flex-row items-center hover:text-accent"
@@ -32,7 +34,7 @@ export default function Header() {
             </Link>
           </div>
 
-          <div className="mx-3">
+          <div>
             <Link
               href="/#contact"
               className="flex flex-row items-center hover:text-accent"
@@ -42,7 +44,7 @@ export default function Header() {
             </Link>
           </div>
 
-          <div className="mx-3">
+          <div>
             <Link
               href="/developing"
               className="flex flex-row items-center hover:text-accent"
