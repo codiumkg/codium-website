@@ -10,7 +10,7 @@ import MobileMenu from "./MobileMenu";
 
 export default function Header() {
   return (
-    <div className="md:p-4 md:px-6 w-screen h-36 flex fixed backdrop-blur-md">
+    <div className="md:p-4 md:px-6 w-screen h-32 flex fixed backdrop-blur-md">
       <div className="flex flex-row items-center p-10 md:p-0 h-full w-full justify-between md:justify-around">
         <Link href="/#hero">
           <Image
