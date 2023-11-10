@@ -58,19 +58,19 @@ export default function HeroSection() {
           </div>
           <Dialog.Root open={isModalOpen} onOpenChange={setIsModalOpen}>
             <Dialog.Trigger asChild>
-              <button className="mt-12 px-8 py-4 border-2 border-accent rounded-xl text-lg text-accent font-normal hover:bg-white hover:text-primary hover:border-white">
+              <button className="mt-12 px-8 py-4 border-2 border-accent hover:border-accent-secondary hover:text-accent-secondary rounded-xl text-lg text-accent font-normal transition">
                 Записаться
               </button>
             </Dialog.Trigger>
             <Dialog.Portal>
               <Dialog.Overlay className="absolute inset-0 bg-primary opacity-70 w-screen h-screen" />
               <Dialog.Content className="p-6 w-9/12 md:w-3/6 lg:w-1/4 bg-secondary min-h-min inset-y-2/4 inset-x-2/4 fixed rounded-xl -translate-x-2/4 -translate-y-2/4">
-                <div className="flex justify-between">
-                  <Dialog.Title className="text-2xl md:text-3xl">
+                <div className="flex justify-between items-center">
+                  <Dialog.Title className="text-1xl sm:text-2xl">
                     Форма для заявки
                   </Dialog.Title>
 
-                  <Dialog.Close>
+                  <Dialog.Close className="outline-none">
                     <AiOutlineClose className="text-xl" />
                   </Dialog.Close>
                 </div>
@@ -119,7 +119,9 @@ export default function HeroSection() {
                 </div>
 
                 <button
-                  className="grid place-content-center mt-6 px-8 py-3 bg-accent rounded-xl text-primary w-full"
+                  className={`grid place-content-center mt-6 px-8 py-3 rounded-xl text-primary w-full ${
+                    isDisabled ? "bg-accent-dark" : "bg-accent"
+                  }`}
                   onClick={handleSubmit}
                   disabled={isDisabled}
                 >

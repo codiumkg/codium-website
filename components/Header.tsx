@@ -23,7 +23,7 @@ export default function Header() {
 
         <MobileMenu />
 
-        <div className="hidden md:flex flex-row items-center h-full uppercase">
+        <div className="hidden md:flex flex-row gap-8 items-center h-full uppercase">
           <div>
             <Link
               href="/developing"

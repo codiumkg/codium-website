@@ -19,8 +19,8 @@ export default function MobileMenu() {
       <Dialog.Portal>
         <Dialog.Overlay></Dialog.Overlay>
         <Dialog.Content className="w-screen h-screen p-10 flex flex-col inset-y-2/4 inset-x-2/4 bg-primary opacity-95 fixed rounded-xl -translate-x-2/4 -translate-y-2/4">
-          <div className="flex w-full justify-end">
-            <Dialog.Close>
+          <div className="flex w-full justify-end p-4">
+            <Dialog.Close className="outline-none">
               <AiOutlineClose className="text-3xl" />
             </Dialog.Close>
           </div>

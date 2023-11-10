@@ -11,6 +11,7 @@ module.exports = {
   theme: {
     colors: {
       'accent': '#FFC38D',
+      'accent-dark': '#b29175',
       'primary': '#1a1817',
       'secondary': '#23211f',
       'accent-secondary': '#a0f538',
