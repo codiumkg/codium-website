@@ -34,7 +34,7 @@ export default function HeroSection() {
       className="py-20 lg:py-0 w-screen min-h-screen flex flex-col justify-center items-center"
       id="hero"
     >
-      <div className="flex flex-col lg:flex-row items-center justify-center">
+      <div className="flex flex-col lg:flex-row lg:gap-16 items-center justify-center">
         <div className="flex-1">
           <Image
             src={Logo}
@@ -47,12 +47,12 @@ export default function HeroSection() {
           <div>
             <span className="text-xl md:text-4xl">Добро пожаловать в мир </span>{" "}
             <br />
-            <span className="text-3xl md:text-6xl text-accent-secondary font-extrabold">
+            <span className="text-3xl md:text-5xl text-accent-secondary font-extrabold">
               IT
             </span>
             <span className="text-2xl md:text-3xl"> где навыки становятся</span>{" "}
             <br />
-            <span className="text-3xl text-accent font-bold md:text-6xl">
+            <span className="text-3xl text-accent font-bold md:text-5xl">
               возможностями!
             </span>
           </div>

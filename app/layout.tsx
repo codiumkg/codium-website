@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
+import { Fira_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+const firaSans = Fira_Sans({
+  subsets: ["cyrillic"],
+  weight: ["200", "300", "400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Codium KG",
@@ -18,7 +24,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>
+      <body className={firaSans.className}>
         <Header />
         {children}
         {/* <Footer /> */}
