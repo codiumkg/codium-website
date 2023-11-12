@@ -45,9 +45,11 @@ export default function HeroSection() {
 
         <div className="flex flex-col flex-1 w-full text-white text-center lg:text-left text-3xl md:text-5xl items-center px-30 lg:px-0 lg:items-start font-light">
           <div>
-            <span className="text-xl md:text-3xl">Добро пожаловать в мир </span>{" "}
+            <span className="text-xl md:text-3xl font-light">
+              Добро пожаловать в мир{" "}
+            </span>{" "}
             <br />
-            <span className="text-3xl md:text-5xl text-accent-secondary font-extrabold">
+            <span className="text-3xl md:text-5xl text-accent-secondary font-bold">
               IT
             </span>
             <span className="text-2xl md:text-3xl"> где навыки становятся</span>{" "}

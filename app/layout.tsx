@@ -5,7 +5,33 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const sanFrancisco = localFont({
-  src: "../assets/fonts/SFNSDisplay-Regular.otf",
+  src: [
+    {
+      path: "../assets/fonts/SFNSDisplay-Light.otf",
+      weight: "200",
+      style: "light",
+    },
+    {
+      path: "../assets/fonts/SFNSDisplay-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/SFNSDisplay-Medium.otf",
+      weight: "500",
+      style: "medium",
+    },
+    {
+      path: "../assets/fonts/SFNSDisplay-Semibold.otf",
+      weight: "600",
+      style: "semibold",
+    },
+    {
+      path: "../assets/fonts/SFNSDisplay-Bold.otf",
+      weight: "700",
+      style: "bold",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
