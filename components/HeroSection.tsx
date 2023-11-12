@@ -45,7 +45,7 @@ export default function HeroSection() {
 
         <div className="flex flex-col flex-1 w-full text-white text-center lg:text-left text-3xl md:text-5xl items-center px-30 lg:px-0 lg:items-start font-light">
           <div>
-            <span className="text-xl md:text-4xl">Добро пожаловать в мир </span>{" "}
+            <span className="text-xl md:text-3xl">Добро пожаловать в мир </span>{" "}
             <br />
             <span className="text-3xl md:text-5xl text-accent-secondary font-extrabold">
               IT
@@ -58,7 +58,7 @@ export default function HeroSection() {
           </div>
           <Dialog.Root open={isModalOpen} onOpenChange={setIsModalOpen}>
             <Dialog.Trigger asChild>
-              <button className="mt-12 px-8 py-4 border-2 border-accent hover:border-accent-secondary hover:text-accent-secondary rounded-xl text-lg text-accent font-normal transition">
+              <button className="mt-12 px-8 py-4 border border-accent hover:border-accent-secondary hover:text-accent-secondary rounded-xl text-lg text-accent font-normal transition">
                 Записаться
               </button>
             </Dialog.Trigger>

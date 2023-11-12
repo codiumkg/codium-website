@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Fira_Sans } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const firaSans = Fira_Sans({
-  subsets: ["cyrillic"],
-  weight: ["200", "300", "400", "700"],
+const sanFrancisco = localFont({
+  src: "../assets/fonts/SFNSDisplay-Regular.otf",
 });
 
 export const metadata: Metadata = {
@@ -24,7 +23,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={firaSans.className}>
+      <body className={sanFrancisco.className}>
         <Header />
         {children}
         {/* <Footer /> */}
