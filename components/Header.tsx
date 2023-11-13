@@ -8,6 +8,7 @@ import { HiPhone } from "react-icons/hi";
 import { RiLoginBoxFill } from "react-icons/ri";
 
 import MobileMenu from "./MobileMenu";
+import { PLATFORM_LOGIN } from "@/constants/constants";
 
 export default function Header() {
   return (
@@ -47,11 +48,11 @@ export default function Header() {
 
           <div>
             <Link
-              href="/developing"
+              href={PLATFORM_LOGIN}
               className="flex flex-row items-center hover:text-accent"
             >
               <RiLoginBoxFill className="mx-3 text-2xl" />
-              Платформа
+              Войти
             </Link>
           </div>
         </div>
