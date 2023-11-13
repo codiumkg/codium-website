@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import PhoneInput from "react-phone-input-2";
+
 import * as Dialog from "@radix-ui/react-dialog";
 import { IRegRequest } from "@/interfaces/regRequest";
 import { AiOutlineClose } from "react-icons/ai";
@@ -22,7 +24,7 @@ export default function RegRequestModal() {
   const { showSuccessNotification, showErrorNotification } = useNotification();
 
   const isDisabled =
-    !requestData.name || !requestData.age || requestData.phone.length < 6;
+    !requestData.name || !requestData.age || requestData.phone.length < 13;
 
   const handleSubmit = () => {
     setIsLoading(true);
@@ -38,7 +40,7 @@ export default function RegRequestModal() {
   return (
     <Dialog.Root open={isModalOpen} onOpenChange={setIsModalOpen}>
       <Dialog.Trigger asChild>
-        <button className="mt-12 px-8 py-4 border border-accent hover:border-accent-secondary hover:text-accent-secondary rounded-xl text-lg text-accent font-normal transition">
+        <button className="mt-12 px-8 py-4 border border-accent hover:border-accent-secondary hover:text-accent-secondary rounded-xl text-lg text-accent font-normal transition outline-none">
           Записаться
         </button>
       </Dialog.Trigger>
@@ -86,20 +88,24 @@ export default function RegRequestModal() {
               ></input>
             </div>
             <div className="mt-1 flex-1">
-              <input
-                className="rounded-xl bg-primary h-10 outline-none p-4 w-full"
-                placeholder="Номер телефона *"
-                name="phone"
-                minLength={6}
+              <PhoneInput
+                inputClass="rounded-xl bg-primary h-10 outline-none p-4 w-full"
+                inputProps={{
+                  name: "phone",
+                  required: true,
+                }}
+                specialLabel=""
+                alwaysDefaultMask
+                countryCodeEditable={false}
+                disableDropdown
+                defaultMask="(...) ... ..."
+                country={"kg"}
+                onlyCountries={["kg"]}
                 value={requestData.phone}
-                onChange={(e) =>
-                  setRequestData({
-                    ...requestData,
-                    phone: e.target.value,
-                  })
+                onChange={(phone) =>
+                  setRequestData({ ...requestData, phone: `+${phone}` })
                 }
-                required
-              ></input>
+              />
             </div>
           </div>
 
