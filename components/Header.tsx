@@ -6,6 +6,7 @@ import Link from "next/link";
 import { HiAcademicCap } from "react-icons/hi";
 import { HiPhone } from "react-icons/hi";
 import { RiLoginBoxFill } from "react-icons/ri";
+
 import MobileMenu from "./MobileMenu";
 
 export default function Header() {

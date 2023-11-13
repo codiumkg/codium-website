@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 import localFont from "next/font/local";
-import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+import "./globals.css";
 
 const sanFrancisco = localFont({
   src: [
@@ -50,6 +52,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={sanFrancisco.className}>
+        <Toaster />
         <Header />
         {children}
         {/* <Footer /> */}
