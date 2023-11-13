@@ -7,6 +7,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { HiAcademicCap, HiPhone } from "react-icons/hi";
 import { RiLoginBoxFill } from "react-icons/ri";
 import Link from "next/link";
+import { PLATFORM_LOGIN } from "@/constants/constants";
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,11 +50,11 @@ export default function MobileMenu() {
 
               <Dialog.Close asChild>
                 <Link
-                  href="/developing"
+                  href={PLATFORM_LOGIN}
                   className="flex flex-row items-center hover:text-accent"
                 >
                   <RiLoginBoxFill className="mx-4 text-4xl" />
-                  Платформа
+                  Войти
                 </Link>
               </Dialog.Close>
             </div>
