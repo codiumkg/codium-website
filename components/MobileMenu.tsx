@@ -30,7 +30,7 @@ export default function MobileMenu() {
             <div className="flex flex-col gap-10 text-3xl">
               <Dialog.Close asChild>
                 <Link
-                  href="/developing"
+                  href="/#courses"
                   className="flex flex-row items-center hover:text-accent"
                 >
                   <HiAcademicCap className="mx-4 text-4xl" />

@@ -12,7 +12,7 @@ import { PLATFORM_LOGIN } from "@/constants/constants";
 
 export default function Header() {
   return (
-    <div className="md:p-4 md:px-6 w-screen h-32 flex fixed backdrop-blur-md">
+    <div className="md:p-4 md:px-6 w-screen h-32 flex fixed backdrop-blur-md z-10">
       <div className="flex flex-row items-center p-10 md:p-0 h-full w-full justify-between md:justify-around">
         <Link href="/#hero">
           <Image
@@ -28,7 +28,7 @@ export default function Header() {
         <div className="hidden md:flex flex-row gap-8 items-center h-full uppercase">
           <div>
             <Link
-              href="/developing"
+              href="/#courses"
               className="flex flex-row items-center hover:text-accent"
             >
               <HiAcademicCap className="mx-3 text-2xl" />

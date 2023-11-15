@@ -15,8 +15,11 @@ module.exports = {
       'primary': '#1a1817',
       'secondary': '#23211f',
       'accent-secondary': '#a0f538',
+      'secondary-text': '#c9c1bd',
       'white': '#ffffff',
-      'light': '#f0dbd3',
+      'text': '#f0dbd3',
+      'highlight': '#313131',
+      'highlight-secondary': "#464646"
     },
     extend: {},
   },
