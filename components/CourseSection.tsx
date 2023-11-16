@@ -2,6 +2,7 @@ import { COURSES } from "@/constants/constants";
 import { HiOutlineRocketLaunch } from "react-icons/hi2";
 import { MdComputer } from "react-icons/md";
 import { FaCode } from "react-icons/fa6";
+import SectionHeader from "./SectionHeader";
 
 export default function CourseSection() {
   return (
@@ -9,12 +10,7 @@ export default function CourseSection() {
       id="courses"
       className="py-32 w-screen min-h-screen flex flex-col justify-center items-center"
     >
-      <h1 className="w-screen flex items-center justify-center bg-primary p-3 border-b border-t border-highlight text-xl font-bold mb-4">
-        <div className="rounded-full bg-secondary border border-highlight shadow-md mr-4 p-3">
-          <FaCode className="text-2xl" />
-        </div>
-        <span>Наши курсы</span>
-      </h1>
+      <SectionHeader icon={<FaCode className="text-2xl" />} text="Наши курсы" />
 
       <div className="flex flex-col md:w-4/5">
         {COURSES.map((course) => (
@@ -29,7 +25,7 @@ export default function CourseSection() {
               {course.modules.map((module) => (
                 <div
                   key={module.title}
-                  className="p-5 bg-secondary rounded-xl border border-highlight hover:border-highlight-secondary"
+                  className="p-5 bg-secondary rounded-xl border border-highlight hover:border-highlight-secondary transition-colors"
                 >
                   <div className="flex items-center">
                     <div className="rounded-full bg-secondary w-12 h-12 shrink-0 mr-3 border border-highlight flex items-center justify-center shadow-md">

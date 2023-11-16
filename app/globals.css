@@ -6,13 +6,13 @@
   --accent-color: #FFC38D;
   --accent-color-dark: #b29175;
   --accent-secondary-color: #a0f538;
-  --text-color: #f0dbd3;
-  --secondary-text-color: #c9c1bd;
+  --text-color: #f7e3db;
+  --secondary-text-color: #d6cbc6;
   --primary-color: #1a1817;
   --highlight-color: #313131;
   --highlight-secondary-color: #464646;
   --secondary-color: #23211f;
-  --secondary-light-color: #2b2827;
+  --secondary-dark-color: #1f1e1d;
 }
 
 * {
