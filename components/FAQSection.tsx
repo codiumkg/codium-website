@@ -10,7 +10,7 @@ import { FAQ } from "@/constants/constants";
 export default function FAQSection() {
   return (
     <section
-      className="py-20 lg:py-0 w-screen min-h-screen flex flex-col justify-center items-center"
+      className="py-32 w-screen min-h-screen flex flex-col justify-center items-center"
       id="faq"
     >
       <SectionHeader
@@ -18,7 +18,7 @@ export default function FAQSection() {
         icon={<MdQuestionMark className="text-2xl" />}
       />
 
-      <div className="flex w-full md:w-9/12 md:p-0">
+      <div className="flex justify-center w-full p-5 md:p-0">
         <Accordion.Root
           className="mt-10 w-full md:w-3/6"
           defaultValue="0"

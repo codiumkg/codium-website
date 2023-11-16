@@ -6,6 +6,7 @@ import Link from "next/link";
 import { HiAcademicCap } from "react-icons/hi";
 import { HiPhone } from "react-icons/hi";
 import { RiLoginBoxFill } from "react-icons/ri";
+import { MdQuestionMark } from "react-icons/md";
 
 import MobileMenu from "./MobileMenu";
 import { PLATFORM_LOGIN } from "@/constants/constants";
@@ -33,6 +34,16 @@ export default function Header() {
             >
               <HiAcademicCap className="mx-3 text-2xl" />
               Курсы
+            </Link>
+          </div>
+
+          <div>
+            <Link
+              href="/#faq"
+              className="flex flex-row items-center hover:text-accent"
+            >
+              <MdQuestionMark className="mx-3 text-2xl" />
+              F.A.Q
             </Link>
           </div>
 

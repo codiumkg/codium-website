@@ -1,12 +1,16 @@
 "use client";
 
-import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
+import Link from "next/link";
+
+import * as Dialog from "@radix-ui/react-dialog";
+
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
+import { MdQuestionMark } from "react-icons/md";
 import { HiAcademicCap, HiPhone } from "react-icons/hi";
 import { RiLoginBoxFill } from "react-icons/ri";
-import Link from "next/link";
+
 import { PLATFORM_LOGIN } from "@/constants/constants";
 
 export default function MobileMenu() {
@@ -35,6 +39,16 @@ export default function MobileMenu() {
                 >
                   <HiAcademicCap className="mx-4 text-4xl" />
                   Курсы
+                </Link>
+              </Dialog.Close>
+
+              <Dialog.Close asChild>
+                <Link
+                  href="/#faq"
+                  className="flex flex-row items-center hover:text-accent"
+                >
+                  <MdQuestionMark className="mx-4 text-4xl" />
+                  F.A.Q
                 </Link>
               </Dialog.Close>
 
