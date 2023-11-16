@@ -37,8 +37,28 @@ const sanFrancisco = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Codium KG",
-  description: "",
+  title: "Курсы программирования Токмок | Codium KG",
+  description: "Курсы программирования Codium в городе Токмок.",
+  keywords: [
+    "курсы",
+    "программирование",
+    "Токмок",
+    "Кыргызстан",
+    "оффлайн-курсы",
+    "Codium",
+    "Codium KG",
+    "обучение",
+    "образование",
+    "база данных",
+    "SQL",
+    "python",
+    "django",
+    "IT",
+    "информационные технологии",
+    "введение в IT",
+    "Codium Tokmok",
+    "Codium Токмок",
+  ],
 };
 
 export default function RootLayout({
