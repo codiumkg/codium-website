@@ -38,7 +38,7 @@ const sanFrancisco = localFont({
 
 export const metadata: Metadata = {
   title: "Курсы программирования Токмок | Codium KG",
-  description: "Курсы программирования Codium в городе Токмок.",
+  description: "Курсы программирования Codium в городе Токмок. | Кодиум Токмок",
   keywords: [
     "курсы",
     "программирование",
@@ -58,6 +58,16 @@ export const metadata: Metadata = {
     "введение в IT",
     "Codium Tokmok",
     "Codium Токмок",
+    "ИТ",
+    "Кодиум",
+    "Кодиум Токмок",
+    "Курсы кодиум",
+    "центр курсов программирования",
+    "центр курсов",
+    "Чуйская область",
+    "Чуй",
+    "KG",
+    "город Токмок",
   ],
 };
 
