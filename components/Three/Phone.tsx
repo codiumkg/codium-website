@@ -2,13 +2,7 @@
 
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import {
-  Group,
-  MeshBasicMaterial,
-  MeshLambertMaterial,
-  MeshPhongMaterial,
-  Vector2,
-} from "three";
+import { Group, MeshLambertMaterial } from "three";
 import { useGLTF } from "@react-three/drei";
 
 export default function Phone() {
@@ -33,6 +27,7 @@ export default function Phone() {
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
         geometry={nodes.Bolt.geometry}
         material={materials.chrom}
         position={[-0.006, -0.073, 0]}
@@ -42,30 +37,39 @@ export default function Phone() {
         <mesh
           castShadow
           receiveShadow
+          // @ts-ignore
           geometry={nodes.Cylinder.geometry}
           material={materials.chrom}
         />
         <mesh
           castShadow
           receiveShadow
+          // @ts-ignore
+
           geometry={nodes.Cylinder_1.geometry}
           material={materials.chrome_frame}
         />
         <mesh
           castShadow
           receiveShadow
+          // @ts-ignore
+
           geometry={nodes.Cylinder_2.geometry}
           material={materials.glass_cam}
         />
         <mesh
           castShadow
           receiveShadow
+          // @ts-ignore
+
           geometry={nodes.Cylinder_3.geometry}
           material={materials.camera_body}
         />
         <mesh
           castShadow
           receiveShadow
+          // @ts-ignore
+
           geometry={nodes.Cylinder_4.geometry}
           // material={materials.lenses}
           material={new MeshLambertMaterial({ color: 0xff666666 })}
@@ -73,18 +77,24 @@ export default function Phone() {
         <mesh
           castShadow
           receiveShadow
+          // @ts-ignore
+
           geometry={nodes.Cylinder_5.geometry}
           material={materials.flash}
         />
         <mesh
           castShadow
           receiveShadow
+          // @ts-ignore
+
           geometry={nodes.Cylinder_6.geometry}
           material={materials.back}
         />
         <mesh
           castShadow
           receiveShadow
+          // @ts-ignore
+
           geometry={nodes.Cylinder_7.geometry}
           material={materials.black_frame}
         />
@@ -92,6 +102,8 @@ export default function Phone() {
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.grill_bottom.geometry}
         material={materials.chrom}
         position={[-0.015, -0.073, 0]}
@@ -99,6 +111,8 @@ export default function Phone() {
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.logo.geometry}
         material={materials.logo}
         position={[0.001, 0.002, 0.011]}
@@ -107,6 +121,8 @@ export default function Phone() {
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.grill.geometry}
         material={materials.black_frame}
         position={[0, 0.071, -0.004]}
@@ -115,66 +131,88 @@ export default function Phone() {
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.grill_body.geometry}
         material={materials.black_frame}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube.geometry}
         material={materials.back}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube_1.geometry}
         material={materials.antenna}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube_2.geometry}
         material={materials.body_metall}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube_3.geometry}
         material={materials.back_glass}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube_4.geometry}
         material={materials.screen}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube_5.geometry}
         material={materials.black_frame}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube_6.geometry}
         material={materials.chrom}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube_7.geometry}
         material={materials.camera_body}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube002.geometry}
         material={materials.screen}
       />
       <mesh
         castShadow
         receiveShadow
+        // @ts-ignore
+
         geometry={nodes.Cube002_1.geometry}
         // material={materials.front_glass}
         material={
