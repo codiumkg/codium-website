@@ -49,7 +49,7 @@ export default function ContactSection() {
 
         <Canvas
           shadows
-          style={{ height: 680, width: "100%" }}
+          style={{ height: 700, width: "100%" }}
           camera={{ position: [0, 0, 3.1], lookAt: () => new Vector3(0, 0, 0) }}
           onCreated={({ scene }) => {
             scene.fog = new FogExp2(0xff1a1817, 0.23);
