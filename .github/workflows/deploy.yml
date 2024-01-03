@@ -25,6 +25,7 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: |
+            npm install -g yarn pm2
             cd ~/codium-website
             git pull
             yarn install
