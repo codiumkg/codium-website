@@ -25,7 +25,8 @@ jobs:
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
           script: |
-            npm install -g yarn pm2
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             cd ~/codium-website
             git pull
             yarn install
