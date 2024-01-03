@@ -13,7 +13,7 @@ import { PLATFORM_LOGIN } from "@/constants/constants";
 
 export default function Header() {
   return (
-    <header className="md:p-4 md:px-6 w-screen h-32 flex fixed backdrop-blur-md">
+    <header className="md:p-4 md:px-6 w-screen h-32 flex fixed backdrop-blur-md z-10">
       <div className="flex flex-row items-center p-10 md:p-0 h-full w-full justify-between md:justify-around">
         <Link href="/#hero">
           <Image

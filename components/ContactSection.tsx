@@ -8,6 +8,7 @@ import { SOCIAL_LINKS } from "@/constants/constants";
 import Scene from "./Three/Scene";
 import { Canvas } from "@react-three/fiber";
 import { FogExp2, Vector3 } from "three";
+import { isMobile } from "react-device-detect";
 
 export default function ContactSection() {
   return (
@@ -47,16 +48,21 @@ export default function ContactSection() {
           </div>
         </div>
 
-        <Canvas
-          shadows
-          style={{ height: 700, width: "100%" }}
-          camera={{ position: [0, 0, 3.1], lookAt: () => new Vector3(0, 0, 0) }}
-          onCreated={({ scene }) => {
-            scene.fog = new FogExp2(0xff1a1817, 0.23);
-          }}
-        >
-          <Scene />
-        </Canvas>
+        {!isMobile && (
+          <Canvas
+            shadows
+            style={{ height: 700, width: "100%" }}
+            camera={{
+              position: [0, 0, 3.1],
+              lookAt: () => new Vector3(0, 0, 0),
+            }}
+            onCreated={({ scene }) => {
+              scene.fog = new FogExp2(0xff1a1817, 0.23);
+            }}
+          >
+            <Scene />
+          </Canvas>
+        )}
       </div>
     </section>
   );
