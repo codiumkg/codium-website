@@ -21,14 +21,14 @@ export default function FAQSection() {
         />
       </Reveal>
 
-      <Reveal>
-        <div className="flex justify-center w-full p-5 md:p-0">
-          <Accordion.Root
-            className="mt-10 w-full md:w-3/6"
-            defaultValue="0"
-            type="single"
-            collapsible
-          >
+      <div className="flex justify-center w-full p-5 md:p-0">
+        <Accordion.Root
+          className="mt-10 w-full md:w-3/6"
+          defaultValue="0"
+          type="single"
+          collapsible
+        >
+          <Reveal>
             {FAQ.map((question, index) => (
               <Accordion.Item
                 key={index}
@@ -49,9 +49,9 @@ export default function FAQSection() {
                 </Accordion.AccordionContent>
               </Accordion.Item>
             ))}
-          </Accordion.Root>
-        </div>
-      </Reveal>
+          </Reveal>
+        </Accordion.Root>
+      </div>
     </section>
   );
 }
