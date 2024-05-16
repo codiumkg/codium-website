@@ -4,7 +4,7 @@ import { Question } from "@/interfaces/faq";
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 export const API_REG_REQUEST = `${BASE_URL}/reg-requests/`;
 
-export const PLATFORM_LOGIN = "https://office.codiumdev.com/login";
+export const PLATFORM_LOGIN = "https://platform.codiumdev.com/login";
 
 export const SOCIAL_LINKS = {
   instagram: "https://instagram.com/codium.kg",
