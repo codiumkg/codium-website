@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const sanFrancisco = localFont({
   src: [
@@ -82,10 +83,13 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={sanFrancisco.className}>
-        <Toaster />
-        <Header />
-        {children}
-        {/* <Footer /> */}
+        <SmoothScroll>
+          <Toaster />
+          <Header />
+
+          {children}
+          {/* <Footer /> */}
+        </SmoothScroll>
       </body>
     </html>
   );
