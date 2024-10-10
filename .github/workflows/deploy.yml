@@ -43,4 +43,4 @@ jobs:
             docker stop codium-website;
             docker rm codium-website;
             docker pull akmatoff/codium-website:latest;
-            docker run --restart always -d -p 3000:3000 --name codium-website akmatoff/codium-website:latest
+            docker run --restart always -d -p 8000:8000 --name codium-website akmatoff/codium-website:latest
