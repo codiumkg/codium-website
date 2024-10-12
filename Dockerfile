@@ -1,6 +1,6 @@
 # Base
 
-FROM node:20.17.0-alpine AS base
+FROM node:20.18.0-slim AS base
 
 WORKDIR /codium-website
 
@@ -8,7 +8,7 @@ ARG BASE_URL
 
 ENV NEXT_PUBLIC_BASE_URL=${BASE_URL}
 
-COPY package*.json /
+COPY package*.json /codium-website/
 
 RUN npm install
 
