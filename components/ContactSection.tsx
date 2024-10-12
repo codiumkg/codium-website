@@ -9,7 +9,6 @@ import Scene from "./Three/Scene";
 import { Canvas } from "@react-three/fiber";
 import { FogExp2, Vector3 } from "three";
 import { isMobile } from "react-device-detect";
-import Reveal from "./Reveal";
 
 export default function ContactSection() {
   return (
@@ -19,50 +18,40 @@ export default function ContactSection() {
     >
       <div className="flex flex-col items-center md:flex-row w-9/12">
         <div className="flex flex-col w-full lg:w-4/12">
-          <Reveal>
-            <div className="my-8 text-4xl">Контакты</div>
-          </Reveal>
+          <div className="my-8 text-4xl">Контакты</div>
 
           <div className="flex flex-col gap-4 w-full">
-            <Reveal>
-              <Link href={SOCIAL_LINKS.instagram} target="_blank">
-                <div className="flex items-center p-4 rounded-xl bg-secondary transition border border-primary hover:border-accent-secondary hover:text-accent-secondary">
-                  <AiFillInstagram className="text-4xl" />
-                  <div className="ml-3">codium.kg</div>
-                </div>
-              </Link>
-            </Reveal>
+            <Link href={SOCIAL_LINKS.instagram} target="_blank">
+              <div className="flex items-center p-4 rounded-xl bg-secondary transition border border-primary hover:border-accent-secondary hover:text-accent-secondary">
+                <AiFillInstagram className="text-4xl" />
+                <div className="ml-3">codium.kg</div>
+              </div>
+            </Link>
 
-            <Reveal>
-              <Link href={SOCIAL_LINKS.whatsapp} target="_blank">
-                <div className="flex items-center p-4 rounded-xl bg-secondary transition border border-primary hover:border-accent-secondary hover:text-accent-secondary">
-                  <BsWhatsapp className="text-4xl" />
-                  <div className="ml-3">+996 504 044 402</div>
-                </div>
-              </Link>
-            </Reveal>
+            <Link href={SOCIAL_LINKS.whatsapp} target="_blank">
+              <div className="flex items-center p-4 rounded-xl bg-secondary transition border border-primary hover:border-accent-secondary hover:text-accent-secondary">
+                <BsWhatsapp className="text-4xl" />
+                <div className="ml-3">+996 504 044 402</div>
+              </div>
+            </Link>
 
-            <Reveal>
-              <Link href="mailto:codiumtokmok@gmail.com" target="_blank">
-                <div className="flex items-center p-4 rounded-xl bg-secondary transition border border-primary hover:border-accent-secondary hover:text-accent-secondary">
-                  <BiLogoGmail className="text-4xl" />
-                  <div className="ml-3">codiumtokmok@gmail.com</div>
-                </div>
-              </Link>
-            </Reveal>
+            <Link href="mailto:codiumtokmok@gmail.com" target="_blank">
+              <div className="flex items-center p-4 rounded-xl bg-secondary transition border border-primary hover:border-accent-secondary hover:text-accent-secondary">
+                <BiLogoGmail className="text-4xl" />
+                <div className="ml-3">codiumtokmok@gmail.com</div>
+              </div>
+            </Link>
 
-            <Reveal>
-              <Link href={SOCIAL_LINKS.tiktok} target="_blank">
-                <div className="flex items-center p-4 rounded-xl bg-secondary transition border border-primary hover:border-accent-secondary hover:text-accent-secondary">
-                  <BsTiktok className="text-3xl" />
-                  <div className="ml-3">codium_kg</div>
-                </div>
-              </Link>
-            </Reveal>
+            <Link href={SOCIAL_LINKS.tiktok} target="_blank">
+              <div className="flex items-center p-4 rounded-xl bg-secondary transition border border-primary hover:border-accent-secondary hover:text-accent-secondary">
+                <BsTiktok className="text-3xl" />
+                <div className="ml-3">codium_kg</div>
+              </div>
+            </Link>
           </div>
         </div>
 
-        {!isMobile && (
+        {/* {!isMobile && (
           <Canvas
             shadows
             style={{ height: 700, width: "100%" }}
@@ -76,7 +65,7 @@ export default function ContactSection() {
           >
             <Scene />
           </Canvas>
-        )}
+        )} */}
       </div>
     </section>
   );

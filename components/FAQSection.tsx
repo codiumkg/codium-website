@@ -14,12 +14,10 @@ export default function FAQSection() {
       className="py-32 w-screen min-h-screen flex flex-col justify-center items-center"
       id="faq"
     >
-      <Reveal>
-        <SectionHeader
-          text="Часто задаваемые вопросы"
-          icon={<MdQuestionMark className="text-2xl" />}
-        />
-      </Reveal>
+      <SectionHeader
+        text="Часто задаваемые вопросы"
+        icon={<MdQuestionMark className="text-2xl" />}
+      />
 
       <div className="flex justify-center w-full p-5 md:p-0">
         <Accordion.Root
@@ -28,28 +26,26 @@ export default function FAQSection() {
           type="single"
           collapsible
         >
-          <Reveal>
-            {FAQ.map((question, index) => (
-              <Accordion.Item
-                key={index}
-                value={index.toString()}
-                className="group/item overflow-hidden border-b border-highlight last:border-b-0 last:rounded-bl-xl last:rounded-br-xl first:rounded-tl-xl first:rounded-tr-xl bg-secondary"
-              >
-                <Accordion.Header className="p-6">
-                  <Accordion.Trigger className="w-full flex justify-between shadow-sm">
-                    <div className="text-md text-left font-bold">
-                      {question.question}
-                    </div>
+          {FAQ.map((question, index) => (
+            <Accordion.Item
+              key={index}
+              value={index.toString()}
+              className="group/item overflow-hidden border-b border-highlight last:border-b-0 last:rounded-bl-xl last:rounded-br-xl first:rounded-tl-xl first:rounded-tr-xl bg-secondary"
+            >
+              <Accordion.Header className="p-6">
+                <Accordion.Trigger className="w-full flex justify-between shadow-sm">
+                  <div className="text-md text-left font-bold">
+                    {question.question}
+                  </div>
 
-                    <FaChevronDown className="text-md ml-2 mt-1 shrink-0 group-data-[state=open]/item:rotate-180 transition-transform" />
-                  </Accordion.Trigger>
-                </Accordion.Header>
-                <Accordion.AccordionContent className="overflow-hidden text-md text-secondary-text font-light p-6 bg-secondary-dark border-t border-highlight group-data-[state=open]/item:animate-appear group-data-[state=close]/item:animate-disappear">
-                  {question.answer}
-                </Accordion.AccordionContent>
-              </Accordion.Item>
-            ))}
-          </Reveal>
+                  <FaChevronDown className="text-md ml-2 mt-1 shrink-0 group-data-[state=open]/item:rotate-180 transition-transform" />
+                </Accordion.Trigger>
+              </Accordion.Header>
+              <Accordion.AccordionContent className="overflow-hidden text-md text-secondary-text font-light p-6 bg-secondary-dark border-t border-highlight group-data-[state=open]/item:animate-appear group-data-[state=close]/item:animate-disappear">
+                {question.answer}
+              </Accordion.AccordionContent>
+            </Accordion.Item>
+          ))}
         </Accordion.Root>
       </div>
     </section>
