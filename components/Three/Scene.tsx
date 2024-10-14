@@ -1,7 +1,7 @@
 "use client";
 
 import { ContactShadows, Sparkles, Stage } from "@react-three/drei";
-import Phone from "./Phone";
+// import Phone from "./Phone";
 import { forwardRef } from "react";
 
 const Scene = forwardRef(function Scene() {
@@ -16,7 +16,7 @@ const Scene = forwardRef(function Scene() {
           color="#eef4fc"
         />
 
-        <Phone />
+        {/* <Phone /> */}
 
         <ContactShadows
           opacity={0.8}
