@@ -17,6 +17,8 @@ jobs:
           node-version: "20.17.0"
       - name: Setup pnpm and dependencies
         uses: pnpm/action-setup@v4
+        with:
+          version: '9.12.1'
       - name: Login to docker hub
         uses: docker/login-action@v3
         with:
