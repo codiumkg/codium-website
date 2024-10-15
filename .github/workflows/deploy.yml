@@ -46,6 +46,7 @@ jobs:
           port: 22
           script: |
             cd codium-website;
+            git pull;
             docker stop codium-website;
             docker rm codium-website;
             docker pull ${{ secrets.DOCKER_USERNAME }}/codium-website:latest;
