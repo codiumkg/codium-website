@@ -12,10 +12,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - name: Setup node and install dependencies
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: "20.17.0"
+      - name: Setup pnpm and dependencies
+        uses: pnpm/action-setup@v4
       - name: Login to docker hub
         uses: docker/login-action@v3
         with:
@@ -45,5 +46,5 @@ jobs:
             cd codium-website;
             docker stop codium-website;
             docker rm codium-website;
-            docker pull akmatoff/codium-website:latest;
-            docker run --restart always -d -p 8000:8000 --name codium-website akmatoff/codium-website:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/codium-website:latest;
+            docker run --restart always -d -p 8000:8000 --name codium-website ${{ secrets.DOCKER_USERNAME  }}/codium-website:latest

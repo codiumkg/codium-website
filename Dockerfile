@@ -1,6 +1,13 @@
-# Base
+# Base 
 
-FROM node:20.18.0-slim AS base
+FROM node:20.18.0-alpine AS base
+
+FROM base AS deps
+
+RUN apk add --no-cache libc6-compat git
+
+RUN corepack enable
+RUN corepack prepare pnpm@latest --activate
 
 WORKDIR /codium-website
 
@@ -8,27 +15,32 @@ ARG BASE_URL
 
 ENV NEXT_PUBLIC_BASE_URL=${BASE_URL}
 
-COPY package*.json /codium-website/
+COPY package.json pnpm-lock.yaml /codium-website/
+RUN pnpm install --frozen-lockfile
 
-RUN npm install
+FROM base AS builder 
 
+RUN corepack enable
+RUN corepack prepare pnpm@latest --activate
+
+WORKDIR /codium-website
+
+COPY --from=deps /codium-website/node_modules ./node_modules
 COPY . .
 
-# Development
-
-FROM base AS dev 
-
-EXPOSE 8000
-
-CMD ["npm", "run", "dev"]
-
-# Production
+RUN pnpm run build
 
 FROM base AS production
 
 WORKDIR /codium-website
 
-RUN npm run build
+ENV NODE_ENV=production
+ENV PORT=8000
+ENV HOSTNAME="0.0.0.0"
+
+COPY --from=deps /codium-website/node_modules ./node_modules
+COPY --from=builder /codium-website/.next ./.next
+COPY --from=builder /codium-website/public ./public
 
 EXPOSE 8000
 
