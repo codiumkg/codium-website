@@ -27,8 +27,7 @@ jobs:
       - name: Build docker image
         run: |
           docker build -t ${{ secrets.DOCKER_USERNAME }}/codium-website \
-                        --build-arg BASE_URL=${{ secrets.BASE_URL }} \
-                        --target=production .
+                        --build-arg BASE_URL=${{ secrets.BASE_URL }} .
       - name: Push docker image to Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/codium-website:latest
 
