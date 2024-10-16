@@ -38,10 +38,17 @@ ENV NODE_ENV=production
 ENV PORT=8000
 ENV HOSTNAME="0.0.0.0"
 
-COPY --from=deps /codium-website/node_modules ./node_modules
-COPY --from=builder /codium-website/.next ./.next
-COPY --from=builder /codium-website/public ./public
+RUN addgroup --system --gid 1001 nodejs
+RUN adduser --system --uid 1001 nextjs
+
+COPY --from=builder --chown=nextjs:nodejs /codium-website/public ./public
+
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
+
+COPY --from=builder --chown=nextjs:nodejs /codium-website/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /codium-website/.next/static ./.next/static
 
 EXPOSE 8000
 
-CMD ["node", ".next/standalone/server.js"]
+CMD ["node", "server.js"]
