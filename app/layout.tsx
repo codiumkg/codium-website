@@ -1,40 +1,16 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
-import localFont from "next/font/local";
+import { Kanit } from "next/font/google";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import cn from "classnames";
 
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import { UIProvider } from "@/components/UIProvider";
 
-const sanFrancisco = localFont({
-  src: [
-    {
-      path: "../assets/fonts/SFNSDisplay-Light.otf",
-      weight: "200",
-      style: "light",
-    },
-    {
-      path: "../assets/fonts/SFNSDisplay-Regular.otf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../assets/fonts/SFNSDisplay-Medium.otf",
-      weight: "500",
-      style: "medium",
-    },
-    {
-      path: "../assets/fonts/SFNSDisplay-Semibold.otf",
-      weight: "600",
-      style: "semibold",
-    },
-    {
-      path: "../assets/fonts/SFNSDisplay-Bold.otf",
-      weight: "700",
-      style: "bold",
-    },
-  ],
+const kanit = Kanit({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -82,14 +58,16 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={sanFrancisco.className}>
-        <SmoothScroll>
-          <Toaster />
-          <Header />
+      <body className={cn(kanit.className, "bg-background light")}>
+        <UIProvider>
+          <SmoothScroll>
+            <Toaster />
+            <Header />
 
-          {children}
-          {/* <Footer /> */}
-        </SmoothScroll>
+            {children}
+            {/* <Footer /> */}
+          </SmoothScroll>
+        </UIProvider>
       </body>
     </html>
   );

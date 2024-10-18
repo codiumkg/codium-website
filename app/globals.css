@@ -2,19 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --accent-color: #FFC38D;
-  --accent-color-dark: #b29175;
-  --accent-secondary-color: #a0f538;
-  --text-color: #f7e3db;
-  --secondary-text-color: #d6cbc6;
-  --primary-color: #1a1817;
-  --highlight-color: #313131;
-  --highlight-secondary-color: #464646;
-  --secondary-color: #23211f;
-  --secondary-dark-color: #1f1e1d;
-}
-
 * {
   box-sizing: border-box;
 }
