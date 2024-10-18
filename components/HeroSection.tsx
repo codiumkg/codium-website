@@ -2,13 +2,16 @@
 
 import Image from "next/image";
 import Logo from "@/assets/codium_logo_solo.png";
-import { Button } from "@nextui-org/react";
+import { Button, useDisclosure } from "@nextui-org/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import SplitType from "split-type";
 import React, { useEffect, useRef } from "react";
+import RegModal from "./RegModal";
 
 export default function HeroSection() {
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+
   const heroTextRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {}, []);
@@ -21,7 +24,7 @@ export default function HeroSection() {
     const tl = gsap.timeline({ scrollTrigger: "#hero" });
 
     tl.from("#heroLogo", {
-      y: -800,
+      x: -800,
       duration: 1,
       opacity: 0,
       rotateZ: -360,
@@ -51,25 +54,25 @@ export default function HeroSection() {
       className="py-20 lg:py-40 w-screen min-h-screen flex flex-col justify-center items-center"
       id="hero"
     >
-      <div className="flex flex-col lg:gap-10 items-center justify-center">
+      <div className="flex flex-col lg:flex-row lg:gap-10 items-center lg:px-40">
         <Image
           id="heroLogo"
           src={Logo}
           alt="Logo"
-          className="my-20 w-60 h-60 md:w-[400px] md:h-[400px] lg:my-0 lg:mx-20 shrink-0"
+          className="my-20 w-60 h-60 md:w-[450px] md:h-[450px] lg:my-0 lg:mx-20 shrink-0"
         />
-        <div className="flex flex-col max-w-[520px] gap-8 text-center">
+
+        <div className="flex flex-col max-w-[80%] gap-8 text-center lg:text-start">
           <h1
             id="heroText"
             ref={heroTextRef}
-            className="text-[3.8rem] font-semibold leading-[3.4rem]"
+            className="text-[5rem] font-semibold leading-[4.2rem]"
           >
-            Здесь должен был быть очень крутой{" "}
-            <span className="text-primary">текст</span>
+            Освой новые навыки с нами и преврати их в{" "}
+            <span className="text-primary">возможности!</span>
           </h1>
           <p id="secondaryText" className="text-default-400">
-            Здесь так же очень крутой вторичный текст для поддержки очень
-            крутого текста выше
+            Запишись на пробный урок, узнай на что ты способен.
           </p>
 
           <div>
@@ -78,9 +81,15 @@ export default function HeroSection() {
               color="primary"
               variant="bordered"
               size="lg"
+              onPress={onOpen}
             >
               Записаться на пробный урок
             </Button>
+            <RegModal
+              onOpenChange={onOpenChange}
+              isOpen={isOpen}
+              onClose={onClose}
+            />
           </div>
         </div>
       </div>

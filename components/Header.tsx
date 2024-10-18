@@ -3,11 +3,14 @@
 import Image from "next/image";
 
 import Logo from "@/assets/codium_logo_solo.png";
-import { Button, Link } from "@nextui-org/react";
+import { Button, Link, useDisclosure } from "@nextui-org/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import RegModal from "./RegModal";
 
 export default function Header() {
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+
   useGSAP(() => {
     const tl = gsap.timeline({
       repeat: 0,
@@ -51,10 +54,14 @@ export default function Header() {
                 <span className="text-foreground">Войти</span>
               </Button>
             </Link>
-            <Button color="primary">Записаться</Button>
+            <Button color="primary" onPress={onOpen}>
+              Записаться
+            </Button>
           </div>
         </div>
       </div>
+
+      <RegModal onOpenChange={onOpenChange} isOpen={isOpen} onClose={onClose} />
     </header>
   );
 }
