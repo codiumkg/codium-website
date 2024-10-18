@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
-import { Kanit } from "next/font/google";
+import { Fira_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import cn from "classnames";
 
@@ -8,9 +8,9 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { UIProvider } from "@/components/UIProvider";
 
-const kanit = Kanit({
+const font = Fira_Sans({
   weight: ["300", "400", "700"],
-  subsets: ["latin"],
+  subsets: ["latin", "cyrillic"],
 });
 
 export const metadata: Metadata = {
@@ -58,7 +58,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={cn(kanit.className, "bg-background light")}>
+      <body className={cn(font.className, "bg-background dark")}>
         <UIProvider>
           <SmoothScroll>
             <Toaster />
