@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
-import { Fira_Sans } from "next/font/google";
+import { Roboto_Flex } from "next/font/google";
 import Header from "@/components/Header";
 import cn from "classnames";
 
@@ -8,7 +8,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { UIProvider } from "@/components/UIProvider";
 
-const font = Fira_Sans({
+const font = Roboto_Flex({
   weight: ["300", "400", "700"],
   subsets: ["latin", "cyrillic"],
 });
