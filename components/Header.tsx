@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header
       id="navbar"
-      className="p-4 md:px-6 w-screen flex fixed backdrop-blur-md z-10"
+      className="p-4 md:px-40 w-screen flex fixed backdrop-blur-md z-10"
     >
       <div className="flex items-center justify-between p-2 h-full w-full">
         <Link href="/#hero" className="flex gap-3 items-center">
