@@ -9,7 +9,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import { UIProvider } from "@/components/UIProvider";
 
 const font = Roboto_Flex({
-  weight: ["300", "400", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin", "cyrillic"],
 });
 

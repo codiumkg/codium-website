@@ -11,7 +11,17 @@ module.exports = {
     
   ],
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: "#FFD166",
+          foreground: "#121212"
+        },
+        secondary: {
+          DEFAULT: "#7F2982"
+        },
+      }
+    }
   },
   darkMode: "class",
   plugins: [nextui({
@@ -19,13 +29,14 @@ module.exports = {
     themes: {
       dark: {
         colors: {
-          background: "#16001E",
-          primary: {
-            DEFAULT: "#F7717D"
-          },
-          secondary: {
-            DEFAULT: "#7F2982"
-          }
+          background: "#362e31",
+          foreground: "#ffffff"
+        }
+      },
+      light: {
+        colors: {
+          foreground: "#121212",
+          background: "#f9f9f9"
         }
       }
   } })]

@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <header
       id="navbar"
-      className="md:p-4 md:px-80 w-screen flex fixed backdrop-blur-md z-10"
+      className="p-4 md:px-6 w-screen flex fixed backdrop-blur-md z-10"
     >
       <div className="flex items-center justify-between p-2 h-full w-full">
         <Link href="/#hero" className="flex gap-3 items-center">
@@ -32,28 +32,26 @@ export default function Header() {
           <span className="text-foreground font-bold text-xl">Codium</span>
         </Link>
 
-        <div className="flex gap-8 items-center">
-          <div className="flex items-center gap-6 font-bold">
-            <Link href="/#contacts" color="foreground">
-              Контакты
-            </Link>
-            <Link href="/#courses" color="foreground">
-              Курсы
-            </Link>
-            <Link href="/#faq" color="foreground">
-              Часто задаваемые вопросы
-            </Link>
-          </div>
+        <div className="hidden md:flex items-center gap-6 font-bold">
+          <Link href="/#contacts" color="foreground">
+            Контакты
+          </Link>
+          <Link href="/#courses" color="foreground">
+            Курсы
+          </Link>
+          <Link href="/#faq" color="foreground">
+            Часто задаваемые вопросы
+          </Link>
+        </div>
 
+        <div className="hidden md:flex gap-8 items-center">
           <div className="flex gap-4">
-            <Button color="primary" size="sm">
-              Записаться
-            </Button>
             <Link href="https://platform.codiumdev.com">
-              <Button color="secondary" variant="flat" size="sm">
-                Войти
+              <Button color="primary" variant="light">
+                <span className="text-foreground">Войти</span>
               </Button>
             </Link>
+            <Button color="primary">Записаться</Button>
           </div>
         </div>
       </div>
