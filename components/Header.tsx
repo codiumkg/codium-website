@@ -36,7 +36,7 @@ export default function Header() {
         </Link>
 
         <div className="hidden md:flex items-center gap-6 font-bold">
-          <Link href="/#contacts" color="foreground">
+          <Link href="/#contact" color="foreground">
             Контакты
           </Link>
           <Link href="/#courses" color="foreground">
