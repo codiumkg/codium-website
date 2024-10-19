@@ -3,6 +3,7 @@
 import Image from "next/image";
 
 import Logo from "@/assets/codium_logo_solo.png";
+import CodiumLogo from "@/assets/codium_logo_text.svg";
 import { Button, Link, useDisclosure } from "@nextui-org/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -27,12 +28,11 @@ export default function Header() {
   return (
     <header
       id="navbar"
-      className="p-4 md:px-40 w-screen flex fixed backdrop-blur-md z-10"
+      className="p-4 md:px-12 lg:px-40 w-screen flex fixed backdrop-blur-md z-10"
     >
       <div className="flex items-center justify-between p-2 h-full w-full">
         <Link href="/#hero" className="flex gap-3 items-center">
-          <Image src={Logo} alt="logo" height={32} />
-          <span className="text-foreground font-bold text-xl">Codium</span>
+          <Image src={CodiumLogo} alt="logo" height={48} />
         </Link>
 
         <div className="hidden md:flex items-center gap-6 font-bold">

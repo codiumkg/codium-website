@@ -58,7 +58,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={cn(font.className, "bg-background dark")}>
+      <body className={cn(font.className, "bg-background light")}>
         <UIProvider>
           <SmoothScroll>
             <Toaster />

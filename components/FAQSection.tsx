@@ -1,52 +1,57 @@
 "use client";
 
-import * as Accordion from "@radix-ui/react-accordion";
-import SectionHeader from "./SectionHeader";
-
-import { MdQuestionMark } from "react-icons/md";
-import { FaChevronDown } from "react-icons/fa";
 import { FAQ } from "@/constants/constants";
-import Reveal from "./Reveal";
+import { useGSAP } from "@gsap/react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function FAQSection() {
+  useGSAP(() => {
+    gsap.from("#faqTitle", {
+      scrollTrigger: { trigger: "#faqTitle", start: "top 70%" },
+      opacity: 0,
+      x: 350,
+      duration: 0.5,
+    });
+
+    gsap.from(".faq-card", {
+      scrollTrigger: {
+        scrub: true,
+        start: "top center",
+        end: "40% center",
+        trigger: "#faq",
+      },
+      x: 400,
+      opacity: 0,
+      stagger: 0.2,
+    });
+  });
+
   return (
     <section
       className="py-32 w-screen min-h-screen flex flex-col justify-center items-center"
       id="faq"
     >
-      <SectionHeader
-        text="Часто задаваемые вопросы"
-        icon={<MdQuestionMark className="text-2xl" />}
-      />
+      <div className="flex flex-col gap-10 justify-center items-center w-full  md:w-[50%]">
+        <h1 id="faqTitle" className="text-[2rem] font-bold">
+          Часто задаваемые вопросы
+        </h1>
 
-      <div className="flex justify-center w-full p-5 md:p-0">
-        <Accordion.Root
-          className="mt-10 w-full md:w-3/6"
-          defaultValue="0"
-          type="single"
-          collapsible
-        >
-          {FAQ.map((question, index) => (
-            <Accordion.Item
-              key={index}
-              value={index.toString()}
-              className="group/item overflow-hidden border-b border-highlight last:border-b-0 last:rounded-bl-xl last:rounded-br-xl first:rounded-tl-xl first:rounded-tr-xl bg-secondary"
+        <Accordion variant="light">
+          {FAQ.map((question) => (
+            <AccordionItem
+              key={question.question}
+              title={<h1 className="font-semibold">{question.question}</h1>}
+              aria-label={question.question}
+              className="py-2 px-5 hover:bg-default-100 hover:text-default-foreground hover:rounded-xl duration-400 faq-card"
             >
-              <Accordion.Header className="p-6">
-                <Accordion.Trigger className="w-full flex justify-between shadow-sm">
-                  <div className="text-md text-left font-bold">
-                    {question.question}
-                  </div>
-
-                  <FaChevronDown className="text-md ml-2 mt-1 shrink-0 group-data-[state=open]/item:rotate-180 transition-transform" />
-                </Accordion.Trigger>
-              </Accordion.Header>
-              <Accordion.AccordionContent className="overflow-hidden text-md text-secondary-text font-light p-6 bg-secondary-dark border-t border-highlight group-data-[state=open]/item:animate-appear group-data-[state=close]/item:animate-disappear">
-                {question.answer}
-              </Accordion.AccordionContent>
-            </Accordion.Item>
+              <p className="text-default-600">{question.answer}</p>
+            </AccordionItem>
           ))}
-        </Accordion.Root>
+        </Accordion>
       </div>
     </section>
   );

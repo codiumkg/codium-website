@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Logo from "@/assets/codium_logo_solo.png";
+import Logo from "@/assets/codium_logo_solo.svg";
 import { Button, useDisclosure } from "@nextui-org/react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -30,6 +30,14 @@ export default function HeroSection() {
       rotateZ: -360,
     });
 
+    gsap.to("#heroLogo", {
+      duration: 3,
+      delay: 0.9,
+      repeat: -1,
+      rotateZ: 2,
+      yoyo: true,
+    });
+
     tl.from(".word", {
       duration: 0.3,
       opacity: 0,
@@ -54,22 +62,22 @@ export default function HeroSection() {
       className="py-20 lg:py-40 w-screen min-h-screen flex flex-col justify-center items-center"
       id="hero"
     >
-      <div className="flex flex-col lg:flex-row lg:gap-10 items-center lg:px-40">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:px-40">
         <Image
           id="heroLogo"
           src={Logo}
           alt="Logo"
-          className="my-20 w-60 h-60 md:w-[450px] md:h-[450px] lg:my-0 lg:mx-20 shrink-0"
+          className="my-20 w-60 h-60 md:w-[600px] md:h-[600px] lg:my-0 shrink-0"
         />
 
         <div className="flex flex-col max-w-[80%] gap-8 text-center lg:text-start">
           <h1
             id="heroText"
             ref={heroTextRef}
-            className="text-[5rem] font-semibold leading-[4.2rem]"
+            className="text-[2.5rem] md:text-[5rem] font-semibold leading-[2rem] md:leading-[4.2rem]"
           >
-            Освой новые навыки с нами и преврати их в{" "}
-            <span className="text-primary">возможности!</span>
+            <span className="text-primary">Знания</span> — это твоя лучшая
+            инвестиция. Готов вложиться в себя?
           </h1>
           <p id="secondaryText" className="text-default-400">
             Запишись на пробный урок, узнай на что ты способен.

@@ -1,5 +1,7 @@
 import {nextui} from "@nextui-org/react";
 
+// #65e67f
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -14,8 +16,8 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#FFD166",
-          foreground: "#121212"
+          DEFAULT: "#30cfc7",
+          foreground: "#ffffff"
         },
         secondary: {
           DEFAULT: "#7F2982"
@@ -36,7 +38,7 @@ module.exports = {
       light: {
         colors: {
           foreground: "#121212",
-          background: "#f9f9f9"
+          background: "#ffffff"
         }
       }
   } })]
