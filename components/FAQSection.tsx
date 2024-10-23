@@ -31,6 +31,7 @@ export default function FAQSection() {
         <Accordion variant="light">
           {FAQ.map((question) => (
             <AccordionItem
+              key={question.question}
               title={<h1 className="font-semibold">{question.question}</h1>}
               aria-label={question.question}
               className="py-2 px-5 hover:bg-default-100 hover:text-default-foreground hover:rounded-xl duration-400 faq-card"
