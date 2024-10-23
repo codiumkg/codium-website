@@ -31,10 +31,10 @@ export default function HeroSection() {
     });
 
     gsap.to("#heroLogo", {
-      duration: 3,
+      duration: 2.5,
       delay: 0.9,
       repeat: -1,
-      rotateZ: 2,
+      rotateZ: 3,
       yoyo: true,
     });
 
