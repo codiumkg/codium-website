@@ -15,7 +15,7 @@ ARG BASE_URL
 
 ENV NEXT_PUBLIC_BASE_URL=${BASE_URL}
 
-COPY package.json pnpm-lock.yaml /codium-website/
+COPY package.json pnpm-lock.yaml .npmrc /codium-website/
 RUN pnpm install --frozen-lockfile
 
 FROM base AS builder 
