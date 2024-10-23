@@ -1,73 +1,67 @@
+"use client";
+
 import Image from "next/image";
 
-import Logo from "@/assets/codium_logo.png";
-import Link from "next/link";
-
-import { HiAcademicCap } from "react-icons/hi";
-import { HiPhone } from "react-icons/hi";
-import { RiLoginBoxFill } from "react-icons/ri";
-import { MdQuestionMark } from "react-icons/md";
-
-import MobileMenu from "./MobileMenu";
-import { PLATFORM_LOGIN } from "@/constants/constants";
+import Logo from "@/assets/codium_logo_solo.png";
+import CodiumLogo from "@/assets/codium_logo_text.svg";
+import { Button, Link, useDisclosure } from "@nextui-org/react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import RegModal from "./RegModal";
 
 export default function Header() {
+  const { isOpen, onOpen, onOpenChange, onClose } = useDisclosure();
+
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      repeat: 0,
+    });
+
+    tl.from("#navbar", {
+      y: -20,
+      opacity: 0,
+      duration: 2,
+      ease: "elastic.inOut",
+    });
+  }, []);
+
   return (
-    <header className="md:p-4 md:px-6 w-screen h-32 flex fixed backdrop-blur-md z-10">
-      <div className="flex flex-row items-center p-10 md:p-0 h-full w-full justify-between md:justify-around">
-        <Link href="/#hero">
-          <Image
-            src={Logo}
-            alt="logo"
-            objectFit="cover"
-            className="mb-2 w-44 md:w-80"
-          />
+    <header
+      id="navbar"
+      className="p-4 md:px-12 lg:px-40 w-screen flex fixed backdrop-blur-md z-10"
+    >
+      <div className="flex items-center justify-between p-2 h-full w-full">
+        <Link href="/#hero" className="flex gap-3 items-center">
+          <Image src={CodiumLogo} alt="logo" height={48} />
         </Link>
 
-        <MobileMenu />
+        <div className="hidden md:flex items-center gap-6 font-bold">
+          <Link href="/#contact" color="foreground">
+            Контакты
+          </Link>
+          <Link href="/#courses" color="foreground">
+            Курсы
+          </Link>
+          <Link href="/#faq" color="foreground">
+            Часто задаваемые вопросы
+          </Link>
+        </div>
 
-        <div className="hidden md:flex flex-row gap-8 items-center h-full uppercase">
-          <div>
-            <Link
-              href="/#courses"
-              className="flex flex-row items-center hover:text-accent"
-            >
-              <HiAcademicCap className="mx-3 text-2xl" />
-              Курсы
+        <div className="hidden md:flex gap-8 items-center">
+          <div className="flex gap-4">
+            <Link href="https://platform.codiumdev.com">
+              <Button color="primary" variant="light">
+                <span className="text-foreground">Войти</span>
+              </Button>
             </Link>
-          </div>
-
-          <div>
-            <Link
-              href="/#faq"
-              className="flex flex-row items-center hover:text-accent"
-            >
-              <MdQuestionMark className="mx-3 text-2xl" />
-              F.A.Q
-            </Link>
-          </div>
-
-          <div>
-            <Link
-              href="/#contact"
-              className="flex flex-row items-center hover:text-accent"
-            >
-              <HiPhone className="mx-3 text-2xl" />
-              Контакты
-            </Link>
-          </div>
-
-          <div>
-            <Link
-              href={PLATFORM_LOGIN}
-              className="flex flex-row items-center hover:text-accent"
-            >
-              <RiLoginBoxFill className="mx-3 text-2xl" />
-              Войти
-            </Link>
+            <Button color="primary" onPress={onOpen}>
+              Записаться
+            </Button>
           </div>
         </div>
       </div>
+
+      <RegModal onOpenChange={onOpenChange} isOpen={isOpen} onClose={onClose} />
     </header>
   );
 }
